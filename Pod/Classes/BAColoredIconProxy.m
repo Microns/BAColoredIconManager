@@ -10,4 +10,9 @@
 
 @implementation BAColoredIconProxy
 
+- (UIImage *)iconNamed:(NSString *)name {
+	// TODO: Load icon from cache. If not there create icon with subject.
+	return nil;
+}
+
 @end

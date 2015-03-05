@@ -10,4 +10,9 @@
 
 @implementation BAColoredIconSubject
 
+- (UIImage *)iconNamed:(NSString *)name {
+	// TODO: Create colored icon.
+	return nil;
+}
+
 @end
