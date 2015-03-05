@@ -1,0 +1,14 @@
+PODS:
+  - BAColoredIconManager (0.1.0)
+
+DEPENDENCIES:
+  - BAColoredIconManager (from `../`)
+
+EXTERNAL SOURCES:
+  BAColoredIconManager:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BAColoredIconManager: 6a6e9ca7f649b8eb454f20e7945c60bb3583be6b
+
+COCOAPODS: 0.34.4
