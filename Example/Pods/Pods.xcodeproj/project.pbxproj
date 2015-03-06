@@ -14,6 +14,7 @@
 		6897C0E4FE7A3F2AA64D81E8 /* Pods-BAColoredIconManager-BAColoredIconManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4DEC3EA894FBB37498A091 /* Pods-BAColoredIconManager-BAColoredIconManager-dummy.m */; };
 		740B24F71AA901FB00C7D7B2 /* BAColoredIconProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 740B24F61AA901FB00C7D7B2 /* BAColoredIconProxy.m */; };
 		740B24FA1AA9021D00C7D7B2 /* BAColoredIconSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 740B24F91AA9021D00C7D7B2 /* BAColoredIconSubject.m */; };
+		7414D9311AA9880D00876E26 /* BAColoredIconManagerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7414D9301AA9880D00876E26 /* BAColoredIconManagerFactory.m */; };
 		774013967F92A181BECBC366 /* BAColoredIconManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB34A3A3C2DD514F8B058AE /* BAColoredIconManager.h */; };
 		CCB07E60B0865474B4C137FD /* Pods-Tests-BAColoredIconManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D337D851D903F7B62995F0 /* Pods-Tests-BAColoredIconManager-dummy.m */; };
 		D731BD3E22AAC7FF52DED6FE /* Pods-BAColoredIconManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA408C5E71EE639F7827D52 /* Pods-BAColoredIconManager-dummy.m */; };
@@ -67,6 +68,8 @@
 		740B24F61AA901FB00C7D7B2 /* BAColoredIconProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAColoredIconProxy.m; path = Pod/Classes/BAColoredIconProxy.m; sourceTree = "<group>"; };
 		740B24F81AA9021D00C7D7B2 /* BAColoredIconSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAColoredIconSubject.h; path = Pod/Classes/BAColoredIconSubject.h; sourceTree = "<group>"; };
 		740B24F91AA9021D00C7D7B2 /* BAColoredIconSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAColoredIconSubject.m; path = Pod/Classes/BAColoredIconSubject.m; sourceTree = "<group>"; };
+		7414D92F1AA9880D00876E26 /* BAColoredIconManagerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAColoredIconManagerFactory.h; path = Pod/Classes/BAColoredIconManagerFactory.h; sourceTree = "<group>"; };
+		7414D9301AA9880D00876E26 /* BAColoredIconManagerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAColoredIconManagerFactory.m; path = Pod/Classes/BAColoredIconManagerFactory.m; sourceTree = "<group>"; };
 		77C648892E6E809E4FFD42A5 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
 		8364929457DF9945D0829BCF /* libPods-BAColoredIconManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BAColoredIconManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C27CA266C6EF95D8AE3764 /* BAColoredIconManager.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BAColoredIconManager.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +180,8 @@
 		5404D08C4300711042C7A641 /* BAColoredIconManager */ = {
 			isa = PBXGroup;
 			children = (
+				7414D92F1AA9880D00876E26 /* BAColoredIconManagerFactory.h */,
+				7414D9301AA9880D00876E26 /* BAColoredIconManagerFactory.m */,
 				9BB34A3A3C2DD514F8B058AE /* BAColoredIconManager.h */,
 				740B24F51AA901FB00C7D7B2 /* BAColoredIconProxy.h */,
 				740B24F61AA901FB00C7D7B2 /* BAColoredIconProxy.m */,
@@ -418,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				740B24F71AA901FB00C7D7B2 /* BAColoredIconProxy.m in Sources */,
+				7414D9311AA9880D00876E26 /* BAColoredIconManagerFactory.m in Sources */,
 				740B24FA1AA9021D00C7D7B2 /* BAColoredIconSubject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
