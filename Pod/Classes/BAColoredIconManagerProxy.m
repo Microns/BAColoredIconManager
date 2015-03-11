@@ -44,7 +44,7 @@ static NSInteger MAX_CACHE_ENTRIES = 100;
 
 // @override
 - (UIImage *)iconNamed:(NSString *)name {
-    UIImage *cachedIcon = [self.cache objectForKey:name];
+    UIImage *cachedIcon = [self cachedIconNamed:name];
 
     if (cachedIcon) {
         return cachedIcon;
@@ -56,6 +56,8 @@ static NSInteger MAX_CACHE_ENTRIES = 100;
 
     return nil;
 }
+
+#pragma mark - Caching
 
 - (void)initCache {
     self.cache = [[NSMutableDictionary alloc] init];
@@ -72,6 +74,12 @@ static NSInteger MAX_CACHE_ENTRIES = 100;
     }
     [self.cache setObject:icon forKey:name];
 }
+
+- (UIImage *)cachedIconNamed:(NSString *)name {
+    return [self.cache objectForKey:name];
+}
+
+#pragma mark - Minions
 
 - (void)listenToMemoryWarnings {
     [[NSNotificationCenter defaultCenter] addObserver:self
