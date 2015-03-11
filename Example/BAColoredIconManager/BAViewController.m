@@ -8,7 +8,11 @@
 
 #import "BAViewController.h"
 
+#import <BAColoredIconManager/BAColoredIconManagerFactory.h>
+
 @interface BAViewController ()
+
+@property(weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -17,11 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    id<BAColoredIconManager> manager = [BAColoredIconManagerFactory manager];
+    manager.color = [UIColor greenColor];
+    UIImage *redIcon = [manager iconNamed:@"testicon"];
+    self.imageView.image = redIcon;
 }
 
 @end
