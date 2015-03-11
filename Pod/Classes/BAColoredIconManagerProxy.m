@@ -10,9 +10,11 @@
 
 #import "BAColoredIconManagerSubject.h"
 
+static NSInteger MAX_CACHE_ENTRIES = 100;
+
 @interface BAColoredIconManagerProxy ()
 
-@property(nonatomic) NSDictionary *cache;
+@property(nonatomic) NSMutableDictionary *cache;
 @property(nonatomic) BAColoredIconManagerSubject *iconManagerSubject;
 
 @end
@@ -36,6 +38,7 @@
 
 // @override
 - (void)setColor:(UIColor *)color {
+    [self clearCache];
     [self.iconManagerSubject setColor:color];
 }
 
@@ -46,19 +49,28 @@
     if (cachedIcon) {
         return cachedIcon;
     } else {
-        return [self.iconManagerSubject iconNamed:name];
+        UIImage *icon = [self.iconManagerSubject iconNamed:name];
+        [self cacheIcon:icon named:name];
+        return icon;
     }
 
     return nil;
 }
 
 - (void)initCache {
-    self.cache = [[NSDictionary alloc] init];
+    self.cache = [[NSMutableDictionary alloc] init];
 }
 
 - (void)clearCache {
     self.cache = nil;
     [self initCache];
+}
+
+- (void)cacheIcon:(UIImage *)icon named:(NSString *)name {
+    if (self.cache.count > MAX_CACHE_ENTRIES) {
+        [self clearCache];
+    }
+    [self.cache setObject:icon forKey:name];
 }
 
 - (void)listenToMemoryWarnings {
