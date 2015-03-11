@@ -25,7 +25,9 @@
     self = [super init];
 
     if (self) {
-        self.cache = [[NSDictionary alloc] init];
+        [self initCache];
+        [self listenToMemoryWarnings];
+
         self.iconManagerSubject = [[BAColoredIconManagerSubject alloc] init];
     }
 
@@ -50,4 +52,19 @@
     return nil;
 }
 
+- (void)initCache {
+    self.cache = [[NSDictionary alloc] init];
+}
+
+- (void)clearCache {
+    self.cache = nil;
+    [self initCache];
+}
+
+- (void)listenToMemoryWarnings {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(clearCache)
+                                                 name:@"UIApplicationDidReceiveMemoryWarningNotification"
+                                               object:nil];
+}
 @end
