@@ -1,0 +1,68 @@
+//
+//  BAColoredIconSubject.m
+//  Pods
+//
+//  Created by Marcus Fleischmann on 05.03.15.
+//
+//
+
+#import "BAColoredIconManagerSubject.h"
+
+@implementation BAColoredIconManagerSubject
+@synthesize color = _color;
+
+- (instancetype)init {
+    self = [super init];
+
+    if (self) {
+        self.color = [UIColor blackColor];
+    }
+
+    return self;
+}
+
+// @override
+- (UIImage *)iconNamed:(NSString *)name {
+    UIImage *icon = [UIImage imageNamed:name];
+    UIImage *iconWithBackground = [self addWhiteBackgroundToIcon:icon];
+
+    CGRect rect = {0, 0, iconWithBackground.size.width, iconWithBackground.size.height};
+
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    [self.color setFill];
+    UIRectFill(rect);
+    UIImage *tempColorImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    CGImageRef iconRef = [iconWithBackground CGImage];
+    CGImageRef maskRef = CGImageMaskCreate(CGImageGetWidth(iconRef), CGImageGetHeight(iconRef),
+                                           CGImageGetBitsPerComponent(iconRef), CGImageGetBitsPerPixel(iconRef),
+                                           CGImageGetBytesPerRow(iconRef), CGImageGetDataProvider(iconRef), NULL, false);
+
+    CGImageRef maskedIconRef = CGImageCreateWithMask([tempColorImage CGImage], maskRef);
+    CGImageRelease(maskRef);
+    UIImage *coloredIcon = [UIImage imageWithCGImage:maskedIconRef];
+    CGImageRelease(maskedIconRef);
+
+    return coloredIcon;
+}
+
+- (UIImage *)addWhiteBackgroundToIcon:(UIImage *)icon {
+    UIGraphicsBeginImageContext(icon.size);
+    CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 1, 1, 1, 1);
+    CGRect iconRect = CGRectZero;
+    iconRect.origin = CGPointZero;
+    iconRect.size.width = icon.size.width;
+    iconRect.size.height = icon.size.height;
+
+    CGContextTranslateCTM(UIGraphicsGetCurrentContext(), 0.0, icon.size.height);
+    CGContextScaleCTM(UIGraphicsGetCurrentContext(), 1.0, -1.0);
+    CGContextFillRect(UIGraphicsGetCurrentContext(), iconRect);
+    CGContextDrawImage(UIGraphicsGetCurrentContext(), iconRect, icon.CGImage);
+    UIImage *iconWithBackround = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return iconWithBackround;
+}
+
+@end

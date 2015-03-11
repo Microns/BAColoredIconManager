@@ -8,11 +8,12 @@
 
 #import "BAColoredIconManagerFactory.h"
 
+#import "BAColoredIconManagerProxy.h"
+
 @implementation BAColoredIconManagerFactory
 
-+ (BAColoredIconManager *)manager {
-	// TODO: Implement creation logic based on BAColoredIconProxy.
-	return nil;
++ (id<BAColoredIconManager>)manager {
+    return [[BAColoredIconManagerProxy alloc] init];
 }
 
 @end

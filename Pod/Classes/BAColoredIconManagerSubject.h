@@ -1,5 +1,5 @@
 //
-//  BAColoredIconProxy.h
+//  BAColoredIconSubject.h
 //  Pods
 //
 //  Created by Marcus Fleischmann on 05.03.15.
@@ -10,6 +10,6 @@
 
 #import "BAColoredIconManager.h"
 
-@interface BAColoredIconProxy : BAColoredIconManager
+@interface BAColoredIconManagerSubject : NSObject <BAColoredIconManager>
 
 @end
