@@ -10,19 +10,11 @@
 Pod::Spec.new do |s|
   s.name             = "BAColoredIconManager"
   s.version          = "0.1.0"
-  s.summary          = "A short description of BAColoredIconManager."
-  s.description      = <<-DESC
-                       An optional longer description of BAColoredIconManager
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/BAColoredIconManager"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.summary          = "BAColoredIconManager allows you to color black on transparent PNG icons in any color at runtime."
+  s.homepage         = "https://github.com/Microns/BAColoredIconManager"
   s.license          = 'MIT'
   s.author           = { "Marcus Fleischmann" => "marcus@bitartists.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/BAColoredIconManager.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/Microns/BAColoredIconManager.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -32,7 +24,6 @@ Pod::Spec.new do |s|
     'BAColoredIconManager' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+	s.public_header_files = 'Pod/Classes/**/*.h'
+   s.frameworks = 'UIKit', 'Foundation'
 end
