@@ -32,7 +32,7 @@ Create a manager via the manager factory and set the icon color you want to have
 	
 Get a colored image via the manager object. **Note** that the image has to be in the bundle and monochrome black on transparent background. Check the example app if you're not sure on how it should look like.
 
-	UIImage *icon = [manager iconNamed:@"your-black-on-transparent-icon.png"];
+	UIImage *icon = [manager iconNamed:@"your-black-on-transparent-icon-name"];
 
 ### Author
 

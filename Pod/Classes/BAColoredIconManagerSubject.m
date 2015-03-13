@@ -48,8 +48,9 @@
 }
 
 - (UIImage *)addWhiteBackgroundToIcon:(UIImage *)icon {
-    UIGraphicsBeginImageContext(icon.size);
+    UIGraphicsBeginImageContextWithOptions(icon.size, NO, icon.scale);
     CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 1, 1, 1, 1);
+    
     CGRect iconRect = CGRectZero;
     iconRect.origin = CGPointZero;
     iconRect.size.width = icon.size.width;
@@ -59,10 +60,10 @@
     CGContextScaleCTM(UIGraphicsGetCurrentContext(), 1.0, -1.0);
     CGContextFillRect(UIGraphicsGetCurrentContext(), iconRect);
     CGContextDrawImage(UIGraphicsGetCurrentContext(), iconRect, icon.CGImage);
-    UIImage *iconWithBackround = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *iconWithBackground = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    return iconWithBackround;
+    return iconWithBackground;
 }
 
 @end
