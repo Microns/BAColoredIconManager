@@ -12,7 +12,7 @@
 
 @implementation BAColoredIconManagerFactory
 
-+ (id<BAColoredIconManager>)manager {
++ (id<BAColoredIconManager>)createManager {
     return [[BAColoredIconManagerProxy alloc] init];
 }
 

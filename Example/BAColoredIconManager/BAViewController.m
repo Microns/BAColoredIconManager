@@ -28,15 +28,15 @@ typedef NS_ENUM(NSUInteger, SectionType) { SectionTypeRandom, SectionTypeRed, Se
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    self.randomManager = [BAColoredIconManagerFactory manager];
+    self.randomManager = [BAColoredIconManagerFactory createManager];
 
-    self.redManager = [BAColoredIconManagerFactory manager];
+    self.redManager = [BAColoredIconManagerFactory createManager];
     self.redManager.color = [UIColor redColor];
 
-    self.greenManager = [BAColoredIconManagerFactory manager];
+    self.greenManager = [BAColoredIconManagerFactory createManager];
     self.greenManager.color = [UIColor greenColor];
 
-    self.blueManager = [BAColoredIconManagerFactory manager];
+    self.blueManager = [BAColoredIconManagerFactory createManager];
     self.blueManager.color = [UIColor blueColor];
 
     self.tableView.scrollsToTop = YES;
@@ -67,7 +67,7 @@ typedef NS_ENUM(NSUInteger, SectionType) { SectionTypeRandom, SectionTypeRed, Se
         cell.imageView.image = [self.blueManager iconNamed:@"testicon"];
     }
 
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %li - %li", @"Cell", indexPath.section, indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %li - %li", @"Cell", (long)indexPath.section, (long)indexPath.row];
 
     return cell;
 }

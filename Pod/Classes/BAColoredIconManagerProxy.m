@@ -64,12 +64,11 @@ static NSInteger MAX_CACHE_ENTRIES = 100;
 }
 
 - (void)clearCache {
-    self.cache = nil;
-    [self initCache];
+    [self.cache removeAllObjects];
 }
 
 - (void)cacheIcon:(UIImage *)icon named:(NSString *)name {
-    if (self.cache.count > MAX_CACHE_ENTRIES) {
+    if (self.cache.count >= MAX_CACHE_ENTRIES) {
         [self clearCache];
     }
     [self.cache setObject:icon forKey:name];

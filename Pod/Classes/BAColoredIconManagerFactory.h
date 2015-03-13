@@ -12,6 +12,6 @@
 
 @interface BAColoredIconManagerFactory : NSObject
 
-+ (id<BAColoredIconManager>)manager;
++ (id<BAColoredIconManager>)createManager;
 
 @end
