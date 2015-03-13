@@ -1,3 +1,6 @@
+# Warning: Work in progress!
+This pod is still under development and not accessible via CocoaPods!
+
 # BAColoredIconManager
 
 [![CI Status](http://img.shields.io/travis/Marcus Fleischmann/BAColoredIconManager.svg?style=flat)](https://travis-ci.org/Marcus Fleischmann/BAColoredIconManager)
