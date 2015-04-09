@@ -28,7 +28,7 @@
 
     CGRect rect = {0, 0, iconWithBackground.size.width, iconWithBackground.size.height};
 
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, icon.scale);
     [self.color setFill];
     UIRectFill(rect);
     UIImage *tempColorImage = UIGraphicsGetImageFromCurrentImageContext();

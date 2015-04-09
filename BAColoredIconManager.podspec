@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "BAColoredIconManager"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "BAColoredIconManager allows you to color black on transparent PNG icons in any color at runtime."
   s.homepage         = "https://github.com/Microns/BAColoredIconManager"
   s.license          = 'MIT'

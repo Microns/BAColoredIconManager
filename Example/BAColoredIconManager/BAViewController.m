@@ -49,7 +49,7 @@ typedef NS_ENUM(NSUInteger, SectionType) { SectionTypeRandom, SectionTypeRed, Se
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 50;
+    return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,13 +58,13 @@ typedef NS_ENUM(NSUInteger, SectionType) { SectionTypeRandom, SectionTypeRed, Se
     if (indexPath.section == SectionTypeRandom) {
         UIColor *randomColor = [self randomColor];
         self.randomManager.color = randomColor;
-        cell.imageView.image = [self.randomManager iconNamed:@"testicon"];
+        cell.imageView.image = [self.randomManager iconNamed:@"icon"];
     } else if (indexPath.section == SectionTypeRed) {
-        cell.imageView.image = [self.redManager iconNamed:@"testicon"];
+        cell.imageView.image = [self.redManager iconNamed:@"icon"];
     } else if (indexPath.section == SectionTypeGreen) {
-        cell.imageView.image = [self.greenManager iconNamed:@"testicon"];
+        cell.imageView.image = [self.greenManager iconNamed:@"icon"];
     } else if (indexPath.section == SectionTypeBlue) {
-        cell.imageView.image = [self.blueManager iconNamed:@"testicon"];
+        cell.imageView.image = [self.blueManager iconNamed:@"icon"];
     }
 
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %li - %li", @"Cell", (long)indexPath.section, (long)indexPath.row];
