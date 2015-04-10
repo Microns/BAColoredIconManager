@@ -41,7 +41,8 @@
 
     CGImageRef maskedIconRef = CGImageCreateWithMask([tempColorImage CGImage], maskRef);
     CGImageRelease(maskRef);
-    UIImage *coloredIcon = [UIImage imageWithCGImage:maskedIconRef];
+    UIImage *coloredIcon =
+        [UIImage imageWithCGImage:maskedIconRef scale:[[UIScreen mainScreen] scale] orientation:UIImageOrientationUp];
     CGImageRelease(maskedIconRef);
 
     return coloredIcon;
@@ -50,7 +51,7 @@
 - (UIImage *)addWhiteBackgroundToIcon:(UIImage *)icon {
     UIGraphicsBeginImageContextWithOptions(icon.size, NO, icon.scale);
     CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 1, 1, 1, 1);
-    
+
     CGRect iconRect = CGRectZero;
     iconRect.origin = CGPointZero;
     iconRect.size.width = icon.size.width;
