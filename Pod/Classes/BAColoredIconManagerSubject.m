@@ -41,8 +41,7 @@
 
     CGImageRef maskedIconRef = CGImageCreateWithMask([tempColorImage CGImage], maskRef);
     CGImageRelease(maskRef);
-    UIImage *coloredIcon =
-        [UIImage imageWithCGImage:maskedIconRef scale:[[UIScreen mainScreen] scale] orientation:UIImageOrientationUp];
+    UIImage *coloredIcon = [UIImage imageWithCGImage:maskedIconRef scale:icon.scale orientation:UIImageOrientationUp];
     CGImageRelease(maskedIconRef);
 
     return coloredIcon;
