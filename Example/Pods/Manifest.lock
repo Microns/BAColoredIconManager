@@ -1,5 +1,5 @@
 PODS:
-  - BAColoredIconManager (0.1.0)
+  - BAColoredIconManager (0.1.4)
 
 DEPENDENCIES:
   - BAColoredIconManager (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  BAColoredIconManager: 6a6e9ca7f649b8eb454f20e7945c60bb3583be6b
+  BAColoredIconManager: 453454608bdd13537e7f2d340bd69a5055117ee2
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.37.1
