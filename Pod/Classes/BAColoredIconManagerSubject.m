@@ -24,6 +24,10 @@
 // @override
 - (UIImage *)iconNamed:(NSString *)name {
     UIImage *icon = [UIImage imageNamed:name];
+    return [self applyColorToIcon:icon];
+}
+
+- (UIImage *)applyColorToIcon:(UIImage *)icon {
     UIImage *iconWithBackground = [self addWhiteBackgroundToIcon:icon];
 
     CGRect rect = {0, 0, iconWithBackground.size.width, iconWithBackground.size.height};
