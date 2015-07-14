@@ -57,6 +57,11 @@ static NSInteger MAX_CACHE_ENTRIES = 100;
     return nil;
 }
 
+// @override
+- (UIImage *)applyColorToIcon:(UIImage *)icon {
+    return [self.iconManagerSubject applyColorToIcon:icon];
+}
+
 #pragma mark - Caching
 
 - (void)initCache {

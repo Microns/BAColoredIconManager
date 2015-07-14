@@ -14,5 +14,6 @@
 @property(nonatomic, strong) UIColor *color;
 
 - (UIImage *)iconNamed:(NSString *)name;
+- (UIImage *)applyColorToIcon:(UIImage *)icon;
 
 @end
